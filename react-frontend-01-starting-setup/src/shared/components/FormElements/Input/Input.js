@@ -24,12 +24,13 @@ const Input = props => {
     }
 
     const element = props.element === "input" ? 
-    (<input id={props.id} type={props.type} placeholder={props.placeholder} value={inputState.value}/>) :
-    (<textarea id={props.id} rows={props.rows || 4} value={inputState.value} />);
+    (<input id={props.id} type={props.type} placeholder={props.placeholder}  onChange={changeHandler} value={inputState.value}/>) :
+    (<textarea id={props.id} rows={props.rows || 4}  onChange={changeHandler} value={inputState.value} />);
    
     return (<div className={`form-control ${!inputState.isValid && 'form-control--invalid'}`}>
         <label htmlFor={props.id} >{props.label}</label>
         {element}
+        {!inputState.isValid && <p>{props.errorText}</p>}
     </div>);
 };
 

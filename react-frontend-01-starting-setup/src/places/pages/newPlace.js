@@ -4,7 +4,7 @@ import './newPlace.css';
 
 const newPlace =(props) =>{
     return <div className="place-form"> 
-        <Input element="input" type="text" label="Name" placeholder="Enter" />
+        <Input element="input" type="text" label="Name" placeholder="Enter" validators={[]} errorText="enter valid input"/>
     </div>
 }
 
